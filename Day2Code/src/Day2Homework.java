@@ -95,19 +95,50 @@ public class Day2Homework {
 //        }
 
 //        （7）字符串判断：从键程输入一个字符串，判断该字符串是否可以被转换为一个有效的数字。
-//        Scanner scan =new Scanner(System.in);
-//        String str1= scan.nextLine();
-//        char num[]=new char[str1.length()];
-//        int j =0;
-//        for (int i = 0; i < str1.length(); i++) {
-//            char temp = str1.charAt(i);
-//            if ('0'<=temp&&temp<='9'){
-//                num[j]=temp;
-//                ++j;
-//            }
-//        }
-//        String str=new String(num);
-//        System.out.println("有效数字:"+str);
+
+        Scanner scan = new Scanner(System.in);
+        boolean flag = false;
+//      先判断是否全是数字组成
+        if (scan.hasNextDouble()) {
+            String str1 = scan.nextLine();
+//          初始化前三位确认正负小数，即0开头的两种情况
+            char num[] = {str1.charAt(0), str1.charAt(1), str1.charAt(2)};
+//          循环确认至少有一位不为0的数
+            for (int i = 0; i < str1.length(); i++) {
+                char temp = str1.charAt(i);
+                if ('0' < temp && temp <= '9') {
+                    flag = true;
+                }
+            }
+            if (flag) {
+//              正数小数0. 开头
+                if ((num[0] == 0 && num[2] == '.')) {
+                    System.out.println("有效数字" + str1);
+//              正小数.   开头
+                } else if (num[0] == '.') {
+                    System.out.println("有效数字：0" + str1);
+//              负数小数-0.  开头
+                } else if (num[0] == '-' && num[1] == '0' && num[2] == '.') {
+                    System.out.println("有效数字" + str1);
+//              负小数-.    开头
+                } else if (num[0] == '-' && num[1] == '.') {
+                    str1=str1.replace('-','0');
+                    System.out.println("有效数字：-"+str1);
+//              正整数
+                } else if ('0' != num[0]) {
+                    System.out.println("有效数字" + str1);
+//              负整数
+                } else if (num[0] == '-' && num[1] != '0') {
+                    System.out.println("有效数字" + str1);
+                } else {
+                    System.out.println("格式不标准,不能转换成数字");
+                }
+            } else {
+                System.out.println("缺少有效数字位!");
+            }
+        } else {
+            System.out.println("不能转换成数字!");
+        }
 
     }
 }
