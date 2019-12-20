@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Day2Homework {
+public class Day4Homework {
     public static void main(String[] args) {
 
 //        （2）水仙花数：计算三位整数（100～999）的水仙花数。水仙花数是指每一位的立方相加等于该数自己.
@@ -140,6 +140,7 @@ public class Day2Homework {
         } else {
             System.out.println("不能转换成数字!");
         }
+
 
     }
 }
