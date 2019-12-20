@@ -98,7 +98,7 @@ public class Day2Homework {
 
         Scanner scan = new Scanner(System.in);
         boolean flag = false;
-//      先判断是否全是数字组成
+//      先判断是否全是合法数字组成
         if (scan.hasNextDouble()) {
             String str1 = scan.nextLine();
 //          初始化前三位确认正负小数，即0开头的两种情况
@@ -130,6 +130,7 @@ public class Day2Homework {
 //              非零开头负数
                 } else if (num[0] == '-' && num[1] != '0') {
                     System.out.println("有效负数：" + str1);
+//              多零开头
                 } else {
                     System.out.println("格式不标准,不能转换成数字");
                 }
