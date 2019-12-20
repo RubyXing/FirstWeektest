@@ -113,23 +113,23 @@ public class Day2Homework {
             if (flag) {
 //              正数小数0. 开头
                 if ((num[0] == 0 && num[2] == '.')) {
-                    System.out.println("有效数字" + str1);
+                    System.out.println("有效正数:" + str1);
 //              正小数.   开头
                 } else if (num[0] == '.') {
-                    System.out.println("有效数字：0" + str1);
+                    System.out.println("有效正数：0" + str1);
 //              负数小数-0.  开头
                 } else if (num[0] == '-' && num[1] == '0' && num[2] == '.') {
-                    System.out.println("有效数字" + str1);
+                    System.out.println("有效负数：" + str1);
 //              负小数-.    开头
                 } else if (num[0] == '-' && num[1] == '.') {
                     str1=str1.replace('-','0');
-                    System.out.println("有效数字：-"+str1);
-//              正整数
+                    System.out.println("有效负数：-"+str1);
+//              非零开头正数
                 } else if ('0' != num[0]) {
-                    System.out.println("有效数字" + str1);
-//              负整数
+                    System.out.println("有效正数：" + str1);
+//              非零开头负数
                 } else if (num[0] == '-' && num[1] != '0') {
-                    System.out.println("有效数字" + str1);
+                    System.out.println("有效负数：" + str1);
                 } else {
                     System.out.println("格式不标准,不能转换成数字");
                 }
