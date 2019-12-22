@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class ClassCode5 {
-    public static void main(String [] args){
+    public static void main(String[] args) {
 //        int[] nums={8,4,2,1,23,344,12};
 //        System.out.print(Arrays.toString(nums));
 
@@ -28,5 +28,6 @@ public class ClassCode5 {
             }
         }
         System.out.println(Arrays.toString(buf));
+
     }
 }
